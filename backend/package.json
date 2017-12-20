@@ -1,0 +1,30 @@
+{
+  "name": "prueba-tecnica",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "clean": "rm -r dist && mkdir dist",
+    "build": "babel src -s -d dist && cp -r src/static dist/",
+    "dev": "PORT=3001 nodemon bin/dev",
+    "prod": "npm run clean && npm run build && PORT=3001 node bin/prod",
+    "start": "PORT=3001 node bin/prod"
+  },
+  "author": "Felipe Acosta",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-preset-env": "^1.6.1"
+  },
+  "dependencies": {
+    "babel-polyfill": "^6.26.0",
+    "babel-register": "^6.26.0",
+    "body-parser": "^1.18.2",
+    "chalk": "^2.3.0",
+    "express": "^4.16.2",
+    "moment": "^2.20.1",
+    "mongoose": "^4.13.7",
+    "path": "^0.12.7"
+  }
+}
