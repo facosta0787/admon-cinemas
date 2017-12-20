@@ -64,26 +64,18 @@ class Cinemas extends Component {
     const response = await fetch('http://localhost:3001/api/cinema',options)
     const res = await response.json()
 
-    if(res.status != 200) return console.log(res.message)
+    if(res.status != 200) return alert(res.message)
 
-    if(!this.state._id){
-      this.setState({
-        cinemas: [...this.state.cinemas, res.data]
-      })
-    }else{
-      const cinemas = await fetch(`http://localhost:3001/api/cinema`,{
-        method: 'GET'
-      })
-      const cin = await cinemas.json()
-      this.setState({
-        cinemas: cin.data
-      })
-    }
+    const cinemas = await fetch(`http://localhost:3001/api/cinema`,{
+      method: 'GET'
+    })
+    const cin = await cinemas.json()
 
     document.querySelector('[name = name]').value = ''
     document.querySelector('[name = location]').value = ''
-    this.setState({
-      movies:[],
+    await this.setState({
+      cinemas: cin.data,
+      movies:[],      
       _id: null
     })
 

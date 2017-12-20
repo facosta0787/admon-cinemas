@@ -37,7 +37,7 @@ class CinemaController{
 
     cinema.save((err,cinema) =>{
       if(err) return res.status(400).send(err)
-
+      console.log(cinema._id)
       return res.status(200).send({
         status:200,
         message:'Cinema created successfully',

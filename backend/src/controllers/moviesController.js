@@ -50,7 +50,7 @@ class MovieController{
 
       movie.save((err,movie) => {
         if(err)  return res.status(400).send(err)
-
+        console.log(movie)
         return res.status(200).send({
           status:200,
           message:'Movie created successfully',
