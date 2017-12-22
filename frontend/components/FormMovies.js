@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { Button, Form} from 'semantic-ui-react'
 
 const FormMovies = (props) => (
@@ -20,5 +21,9 @@ const FormMovies = (props) => (
     <Form.Button color='green'>Submit</Form.Button>
   </Form>
 )
+
+FromMovies.propTypes = {
+  onSubmit: PropTypes.func
+}
 
 export default FormMovies
