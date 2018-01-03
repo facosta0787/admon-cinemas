@@ -22,7 +22,7 @@ const FormMovies = (props) => (
   </Form>
 )
 
-FromMovies.propTypes = {
+FormMovies.propTypes = {
   onSubmit: PropTypes.func
 }
 
